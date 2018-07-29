@@ -11,12 +11,24 @@ namespace DataGridViewTest
 {
     public partial class MainForm : Form
     {
+        // Переменные ------------------------------------------------------------
+
+        Random _randoizer;
+
+        // Конструкторы ----------------------------------------------------------
+
         public MainForm()
         {
             InitializeComponent();
             InitToolStrip();
             InitDataGridView();
         }
+
+        // Свойства --------------------------------------------------------------
+
+        Random Randomizer => _randoizer ?? (_randoizer = new Random());
+
+        // Методы ----------------------------------------------------------------
 
         private void InitToolStrip()
         {
@@ -42,9 +54,6 @@ namespace DataGridViewTest
         }
 
         //------------------------------------------------------------------------
-
-        Random _randoizer;
-        Random Randomizer => _randoizer ?? (_randoizer = new Random());
 
         private void FillDGV()
         {
