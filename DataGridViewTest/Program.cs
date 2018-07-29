@@ -15,6 +15,7 @@ namespace DataGridViewTest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //List<(int, string)> list = new List<(int, string)>();
             Application.Run(new MainForm());
         }
     }

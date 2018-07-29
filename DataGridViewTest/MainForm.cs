@@ -39,9 +39,20 @@ namespace DataGridViewTest
         
         private void InitDataGridView()
         {
+            _dgv.AllowUserToAddRows = false;
+            _dgv.Font = new Font("Courier New", 12);
+            _dgv.ForeColor = Color.Black;
+            
             DataGridViewCellStyle style = new DataGridViewCellStyle
             {
-                WrapMode = DataGridViewTriState.False
+                WrapMode = DataGridViewTriState.False,
+                Font =   _dgv.Font,
+                
+                BackColor = Color.White,
+                ForeColor =  Color.Black, 
+                
+                SelectionBackColor = Color.LightSkyBlue,
+                SelectionForeColor = Color.Black,
             };
 
             _dgv.DefaultCellStyle = style;
