@@ -70,9 +70,9 @@ namespace DataGridViewTest
         {
             try
             {
-                int rowsCount = Randomizer.Next(10, 50);
+                int rowsCount = Randomizer.Next(10, 50) * 2000;
 
-                _dgv.Rows.Clear();
+                List<DataGridViewRow> rows = new List<DataGridViewRow>(rowsCount);
 
                 for (int i = 0; i < rowsCount; i++)
                 {
@@ -90,9 +90,11 @@ namespace DataGridViewTest
                         if (j == 4)
                             row.Cells.Add(new DataGridViewTextBoxCell() { Value = $"[{i};{j}]" });
                     }
-
-                    _dgv.Rows.Add(row);
+                    rows.Add(row);
                 }
+                
+                _dgv.Rows.Clear();
+                _dgv.Rows.AddRange(rows.ToArray());
             }
             catch (Exception error)
             {
